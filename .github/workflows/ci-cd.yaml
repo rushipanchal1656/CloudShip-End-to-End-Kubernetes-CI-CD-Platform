@@ -1,0 +1,27 @@
+name: CloudShip CI/CD
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Build Docker image
+      run: docker build -t cloudship .
+
+    - name: Login to DockerHub
+      run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+
+    - name: Push image
+      run: |
+        docker tag cloudship ${{ secrets.DOCKER_USERNAME }}/cloudship:latest
+        docker push ${{ secrets.DOCKER_USERNAME }}/cloudship:latest
+
+    - name: Deploy to Kubernetes
+      run: kubectl apply -f k8s/

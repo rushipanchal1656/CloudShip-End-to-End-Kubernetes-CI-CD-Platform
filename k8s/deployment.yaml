@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cloudship-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: cloudship
+  template:
+    metadata:
+      labels:
+        app: cloudship
+    spec:
+      containers:
+      - name: cloudship
+        image: <dockerhub-username>/cloudship:latest
+        ports:
+        - containerPort: 5000
