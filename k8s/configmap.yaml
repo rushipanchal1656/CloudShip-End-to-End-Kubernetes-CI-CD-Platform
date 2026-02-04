@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cloudship-config
+  namespace: cloudship
+data:
+  APP_ENV: production
