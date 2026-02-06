@@ -16,22 +16,29 @@ spec:
         app: cloudship
     spec:
       containers:
-      - name: cloudship
-        image: rushipanchal/cloudship:1.0.0
-        ports:
-        - containerPort: 5000
-        envFrom:
-        - configMapRef:
-            name: cloudship-config
-        - secretRef:
-            name: cloudship-secret
-        livenessProbe:
-          httpGet:
-            path: /
-            port: 5000
-          initialDelaySeconds: 10
-        readinessProbe:
-          httpGet:
-            path: /
-            port: 5000
-          initialDelaySeconds: 5
+        - name: cloudship
+          image: rushipanchal/cloudship:1.0.0
+          ports:
+            - containerPort: 5000
+          envFrom:
+            - configMapRef:
+                name: cloudship-config
+            - secretRef:
+                name: cloudship-secret
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "100m"
+            limits:
+              memory: "256Mi"
+              cpu: "500m"
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 5000
+            initialDelaySeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 5000
+            initialDelaySeconds: 5
