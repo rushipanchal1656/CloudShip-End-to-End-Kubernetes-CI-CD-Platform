@@ -4,7 +4,7 @@ metadata:
   name: cloudship-deployment
   namespace: cloudship
 spec:
-  replicas: 2
+  replicas: 4
   strategy:
     type: RollingUpdate
   selector:
