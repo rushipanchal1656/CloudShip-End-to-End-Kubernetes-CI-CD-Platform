@@ -35,3 +35,4 @@ jobs:
         key: ${{ secrets.EC2_SSH_KEY }}
         script: |
           kubectl rollout restart deployment cloudship-deployment -n cloudship
+
