@@ -17,7 +17,8 @@ spec:
     spec:
       containers:
         - name: cloudship
-          image: rushipanchal/cloudship:1.0.0
+          image: rushipanchal/cloudship:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 5000
           envFrom:
