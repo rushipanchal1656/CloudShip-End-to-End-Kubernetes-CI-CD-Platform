@@ -21,16 +21,18 @@ jobs:
     - name: Build Docker image
       run: |
         docker build -t rushipanchal/cloudship:${{ github.sha }} .
+        docker tag rushipanchal/cloudship:${{ github.sha }} rushipanchal/cloudship:latest
 
     - name: Push Docker image
       run: |
         docker push rushipanchal/cloudship:${{ github.sha }}
+        docker push rushipanchal/cloudship:latest
 
     - name: Deploy to Kubernetes
       uses: appleboy/ssh-action@v1.0.3
       with:
         host: ${{ secrets.EC2_HOST }}
-        username: ${{ secrets.EC2_USER }}
+        username: ubuntu
         key: ${{ secrets.EC2_SSH_KEY }}
         script: |
           kubectl set image deployment/cloudship-deployment \
