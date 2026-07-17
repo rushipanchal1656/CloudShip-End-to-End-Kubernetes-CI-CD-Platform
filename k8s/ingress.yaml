@@ -1,3 +1,5 @@
+# This is a Kubernetes Ingress configuration file. It defines an Ingress resource named "cloudship-ingress" in the "cloudship" namespace. The Ingress is configured to use an Application Load Balancer (ALB) with specific health check settings and routes traffic to the "cloudship-service" on port 80. You can apply this configuration to your Kubernetes cluster using the command `kubectl apply -f k8s/ingress.yaml`.
+
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:

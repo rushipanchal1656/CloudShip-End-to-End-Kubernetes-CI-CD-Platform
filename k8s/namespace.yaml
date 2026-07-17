@@ -1,3 +1,5 @@
+# This is a Kubernetes Namespace configuration file. It defines a namespace called "cloudship" with a label "name: cloudship". You can apply this configuration to your Kubernetes cluster using the command `kubectl apply -f k8s/namespace.yaml`.
+
 apiVersion: v1
 kind: Namespace
 metadata:

@@ -1,3 +1,5 @@
+# This is the main application file for the CloudShip project. It defines a simple Flask web application with three routes: the home route ("/"), a health check route ("/health"), and a readiness check route ("/ready"). The health check route returns a JSON response indicating the application's health status and environment, while the readiness check route returns a JSON response indicating that the application is ready to serve requests. The application runs on host "
+
 from flask import Flask, jsonify
 import os
 

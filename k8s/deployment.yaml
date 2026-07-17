@@ -1,3 +1,5 @@
+# This is a Kubernetes Deployment configuration file. It defines a Deployment resource named "cloudship-deployment" in the "cloudship" namespace. The Deployment manages two replicas of the "cloudship" container, which is built from the image "rushipanchal/cloudship:latest". The container exposes port 5000 and uses environment variables from a ConfigMap and a Secret. The Deployment also includes resource requests and limits, as well as liveness and readiness probes to monitor the health of the application. You can apply this configuration to your Kubernetes cluster using the command `kubectl apply -f k8s/deployment.yaml`.
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:

@@ -1,3 +1,5 @@
+# CI/CD workflow for CloudShip application. This GitHub Actions workflow is triggered on every push to the main branch. It performs the following steps: checks out the code, logs in to Docker Hub using secrets, builds a Docker image of the application, pushes the image to Docker Hub, and deploys the updated image to a Kubernetes cluster using SSH. The deployment updates the image of the existing deployment and waits for the rollout to complete.
+
 name: CloudShip End-to-End CI/CD
 
 on:

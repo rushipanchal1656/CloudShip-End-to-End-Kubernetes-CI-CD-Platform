@@ -1,3 +1,5 @@
+# This is a Kubernetes ConfigMap configuration file. It defines a ConfigMap resource named "cloudship-config" in the "cloudship" namespace. The ConfigMap contains a single key-value pair, where the key is "APP_ENV" and the value is "production". You can apply this configuration to your Kubernetes cluster using the command `kubectl apply -f k8s/configmap.yaml`.
+
 apiVersion: v1
 kind: ConfigMap
 metadata:

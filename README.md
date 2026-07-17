@@ -152,7 +152,7 @@ The application is exposed through AWS Application Load Balancer:
 ![AWS ALB](images/ALB.png)
 
 **Target Groups:**
-![Target Groups](images/TG.png)
+![Target Groups](images/Target-group.png)
 
 ## 🆘 Troubleshooting
 
